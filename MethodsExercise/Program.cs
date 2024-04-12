@@ -33,6 +33,18 @@ num2 = int.Parse(Console.ReadLine());
 int product = Multiply(num1, num2);
 Console.WriteLine($"The product is {product}");
 
+Console.WriteLine("Give me a number");
+num1 = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Give me a number to add to the first number");
+num2 = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Give me a third to add to the other numbers");
+int num3 = int.Parse(Console.ReadLine());
+
+sum = Sum2(num1, num2, num3);
+Console.WriteLine($"The sum (using params in Method) is {sum}");
+
 static int Sum(int num1, int num2)
 {
     return num1 + num2;
@@ -41,4 +53,14 @@ static int Sum(int num1, int num2)
 static int Multiply(int num1, int num2)
 {
     return num1 * num2;
+}
+
+static int Sum2(params int[] list)
+{
+    int sum = 0;
+    for(int i = 0; i < list.Length; i++)
+    {
+        sum += list[i];
+    }
+    return sum;
 }
